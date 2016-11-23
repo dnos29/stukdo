@@ -19,6 +19,7 @@
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mark as doing', change_task_path(task, state: "doing"), method: :put %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,6 +44,8 @@
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mark as to do', change_task_path(task, state: "to_do"), method: :put %></td>
+        <td><%= link_to 'Mark as done', change_task_path(task, state: "done"), method: :put %></td>
       </tr>
     <% end %>
   </tbody>
@@ -68,6 +71,7 @@
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mark as doing', change_task_path(task, state: "doing"), method: :put %></td> 
       </tr>
     <% end %>
   </tbody>
