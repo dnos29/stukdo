@@ -9,3 +9,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<% if can? :update, @article %>
+  <%= link_to "Edit", edit_article_path(@article) %>
+<% end %>

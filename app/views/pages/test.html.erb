@@ -15,3 +15,12 @@
         Done
     </div>
 </div>
+
+<% if can? :update, @book %>
+    <%= link_to “Edit”, edit_article_path(@book) %>
+<% end %>
+class ApplicationController < ActionController::Base
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+end
